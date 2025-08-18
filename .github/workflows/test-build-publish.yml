@@ -72,13 +72,13 @@ jobs:
           uv run radon cc --min B src/PROJECT_NAME
           uv run radon mi --min B src/PROJECT_NAME
           uv run lizard -l python -w src/PROJECT_NAME
+          uv run complexipy src/PROJECT_NAME
 
   build-and-check-package:
     name: Build & inspect our package.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: hynek/build-and-inspect-python-package@v2
       - name: Install uv
         uses: astral-sh/setup-uv@v3
         with:
